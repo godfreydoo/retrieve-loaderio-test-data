@@ -10,9 +10,8 @@ var duration = 30000; // in ms, ie. 30 seconds
 var buffer = 5000; // in ms, i.e. 5 second buffer (I found this to be a good buffer)
 var url = 'https://api.loader.io/v2/tests'
 var testSuite = {
-  '<your test nam123123e>': '<your test id>',
-  '<your test name1231>': '<your test id>',
-  '<your test name12312>': '<your test id>'
+  'yoasd': '542e8da48680633e7e4a45031d8aa8ad',
+  'asd': '8c5f7822fc4aadc9d30c5e42b29d6e9b'
 };
 
 
@@ -82,7 +81,7 @@ LoaderTests.prototype.getTestResults = async function (testName, testidx, result
 }
 
 LoaderTests.prototype.write2CSV = async function () {
-  const writeCSVStream = fs.createWriteStream('results.txt');
+  const writeCSVStream = fs.createWriteStream('results.csv');
   await converter.json2csv(this._testResults, (err, csv) => {
     if (err) {
       console.log('Writing from json2csv has an error: ', err);
@@ -108,7 +107,7 @@ async function run() {
     await newRun._testSuite.forEach(value => {
        newRun.getTestResults(value.testName, value.testidx, value.resultidx)
     });
-    console.log('results.txt file should be created / updated soon');
+    console.log('results.csv file should be created / updated soon');
   } catch (err) {
     console.log('Double check testSuite has right data, and that the duration + buffer is accurate for your test settings');
     console.log(err);

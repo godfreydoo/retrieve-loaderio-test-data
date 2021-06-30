@@ -3,7 +3,7 @@
 This repo helps you perform your load testing on [Loader.io](https://loader.io/) by
 1. sequentially executing prepared tests with the same duration,
 2. extracting test results from current run, and
-3. writing to a text file in CSV format for further analysis.
+3. writing to a CSV file for further analysis.
 
 
 ## Limitations
@@ -26,6 +26,6 @@ $ npm install
 ```
 node index.js
 ```
-6. A text file will be created in CSV format once finished.
+6. A CSV file will be created once finished.
 
 Test id can be found in your individual test, under "Webhooks & Schedule section". More information about Loader.io's API documentation can be found [here](https://docs.loader.io/).
