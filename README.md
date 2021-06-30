@@ -1,4 +1,4 @@
-# retrieve-loader-test-data
+# retrieve-loaderio-test-data
 
 This repo helps you perform your load testing on [Loader.io](https://loader.io/) by
 1. sequentially executing prepared tests with the same duration,
@@ -22,7 +22,8 @@ $ npm install
 - `duration` is the duration of your test cases.
 - `buffer` is a buffer time between when the next test case runs. This is important, as Loader.io does not allow for more than one running test at once.
 - `testSuite` is an object with the key as the name of your test, and value as your test id. Test names must be unique.
-5. Run to start tests
+5. Ensure your application is running as Loader.io will need to verify your token.
+6. Run to start tests
 ```
 node index.js
 ```
