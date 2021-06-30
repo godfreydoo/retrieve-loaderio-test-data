@@ -22,10 +22,11 @@ $ npm install
 - `duration` is the duration of your test cases.
 - `buffer` is a buffer time between when the next test case runs. This is important, as Loader.io does not allow for more than one running test at once.
 - `testSuite` is an object with the key as the name of your test, and value as your test id. Test names must be unique.
-5. Run to start tests
+5. Ensure your application is running as Loader.io will need to verify your token. 
+6. Run to start tests
 ```
 node index.js
 ```
-6. A text file will be created in CSV format once finished.
+7. A text file will be created in CSV format once finished.
 
 Test id can be found in your individual test, under "Webhooks & Schedule section". More information about Loader.io's API documentation can be found [here](https://docs.loader.io/).
