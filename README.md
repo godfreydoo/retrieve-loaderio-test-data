@@ -1,4 +1,4 @@
-# retrieve-loader-test-data
+# retrieve-loaderio-test-data
 
 This repo helps you perform your load testing on [Loader.io](https://loader.io/) by
 1. sequentially executing prepared tests with the same duration,
