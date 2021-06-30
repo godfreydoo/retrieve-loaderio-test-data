@@ -1,0 +1,24 @@
+{
+  "name": "retrieve-loader-test-data",
+  "version": "1.0.0",
+  "description": "A simple app for running your tests and extracting your results from Loader.io.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/godfreydoo/retrieve-loader-test-data.git"
+  },
+  "author": "Godfrey Doo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/godfreydoo/retrieve-loader-test-data/issues"
+  },
+  "homepage": "https://github.com/godfreydoo/retrieve-loader-test-data#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "json-2-csv": "^3.14.1"
+  }
+}
