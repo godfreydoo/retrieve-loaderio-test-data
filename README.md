@@ -17,11 +17,17 @@ This repo helps you perform your load testing on [Loader.io](https://loader.io/)
 ```bash
 $ npm install
 ```
-3. Create a `.env` file with your Loader.io API key. An example file has been provided.
+3. Create a `.env` file with your Loader.io API key. An example file has been provided. You can find your API key in [Settings > API](https://loader.io/settings).
 4. Update `index.js` file with your test configurations.
 - `duration` is the duration of your test cases.
 - `buffer` is a buffer time between when the next test case runs. This is important, as Loader.io does not allow for more than one running test at once.
 - `testSuite` is an object with the key as the name of your test, and value as your test id. Test names must be unique.
+
+To find the test id for your tests, you can run this command. Replace `API_KEY` with your API key. 
+```bash
+curl -H 'loaderio-auth: API_KEY' https://api.loader.io/v2/tests | json_pp
+```
+
 5. Ensure your application is running as Loader.io will need to verify your token.
 6. Run to start tests
 ```
@@ -29,4 +35,4 @@ node index.js
 ```
 6. A CSV file will be created once finished.
 
-Test id can be found in your individual test, under "Webhooks & Schedule section". More information about Loader.io's API documentation can be found [here](https://docs.loader.io/).
+More information about Loader.io's API documentation can be found [here](https://docs.loader.io/).
