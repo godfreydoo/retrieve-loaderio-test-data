@@ -58,7 +58,7 @@ LoaderTests.prototype.runTest = function (testName, testidx){
   })
 }
 
-LoaderTests.prototype.getTestResults = async function (testName, testidx, resultidx){
+LoaderTests.prototype.getTestResults = async function (testName, testidx, resultidx, datetime){
   var testName = testName;
   var resultidx = resultidx;
   const config = {
@@ -71,7 +71,7 @@ LoaderTests.prototype.getTestResults = async function (testName, testidx, result
   await axios(config)
     .then(response => {
       response.data['test_name'] = testName;
-      this.write2CSV();
+      this.write2CSV(datetime);
       this._testResults.push(response.data);
     })
     .catch(error => {
@@ -80,8 +80,8 @@ LoaderTests.prototype.getTestResults = async function (testName, testidx, result
     });
 }
 
-LoaderTests.prototype.write2CSV = async function () {
-  const writeCSVStream = fs.createWriteStream('results.csv');
+LoaderTests.prototype.write2CSV = async function (datetime) {
+  const writeCSVStream = fs.createWriteStream(`results_${datetime}.csv`);
   await converter.json2csv(this._testResults, (err, csv) => {
     if (err) {
       console.log('Writing from json2csv has an error: ', err);
@@ -104,8 +104,9 @@ async function run() {
     }
     console.log('All tests ran...');
     console.log('Fetching data and writing to CSV file...');
+    const datetime = Date.now();
     await newRun._testSuite.forEach(value => {
-       newRun.getTestResults(value.testName, value.testidx, value.resultidx)
+       newRun.getTestResults(value.testName, value.testidx, value.resultidx, datetime)
     });
     console.log('results.csv file should be created / updated soon');
   } catch (err) {
