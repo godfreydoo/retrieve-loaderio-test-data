@@ -10,8 +10,8 @@ var duration = 30000; // in ms, ie. 30 seconds
 var buffer = 5000; // in ms, i.e. 5 second buffer (I found this to be a good buffer)
 var url = 'https://api.loader.io/v2/tests'
 var testSuite = {
-  'yoasd': '542e8da48680633e7e4a45031d8aa8ad',
-  'asd': '8c5f7822fc4aadc9d30c5e42b29d6e9b'
+  '<your test name>': '<your test id>',
+  '<your test name>': '<your test id>'
 };
 
 
